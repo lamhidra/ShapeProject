@@ -7,6 +7,8 @@ var shapes = [];
 var registerCircle = function(contextMenus, canvas, context, shapes, canvasContext) {
   var circles = localStorage.getObject('circles');
 
+  if (circles == null) circles = [];
+
   circleContext = new CircleContext(contextMenus, canvas, context, circles);
   canvasContext.addNewContext(circleContext);
   circleContext.initialize();
